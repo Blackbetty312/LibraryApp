@@ -1,0 +1,33 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sample.Book" table="book" schema="library">
+        <id name="idBook">
+            <column name="id_book" sql-type="int(11)"/>
+        </id>
+        <property name="isbn">
+            <column name="isbn" sql-type="varchar(13)" length="13" not-null="true"/>
+        </property>
+        <property name="title">
+            <column name="title" sql-type="varchar(150)" length="150" not-null="true"/>
+        </property>
+        <property name="description">
+            <column name="description" sql-type="text" not-null="true"/>
+        </property>
+        <property name="releaseYear">
+            <column name="release_year" sql-type="int(11)" not-null="true"/>
+        </property>
+        <many-to-one name="publishingByPublishingIdPublishing" class="sample.Publishing" lazy="false">
+            <column name="publishing_id_publishing"/>
+        </many-to-one>
+        <set name="booksAuthorsByIdBook" inverse="true">
+            <key>
+                <column name="book_id_book"/>
+            </key>
+            <one-to-many not-found="ignore" class="sample.BooksAuthors"/>
+        </set>
+    </class>
+</hibernate-mapping>

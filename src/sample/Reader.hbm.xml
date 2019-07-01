@@ -1,0 +1,27 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sample.Reader" table="reader" schema="library">
+        <id name="idReader">
+            <column name="id_reader" sql-type="int(11)"/>
+        </id>
+        <property name="name">
+            <column name="name" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastName">
+            <column name="last_name" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="telephone">
+            <column name="telephone" sql-type="varchar(25)" length="25" not-null="true"/>
+        </property>
+        <property name="personalId">
+            <column name="personal_id" sql-type="varchar(11)" length="11" not-null="true"/>
+        </property>
+        <many-to-one name="usersByUsersIdUser" class="sample.Users">
+            <column name="users_id_user"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

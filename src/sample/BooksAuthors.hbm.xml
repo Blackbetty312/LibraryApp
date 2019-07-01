@@ -1,0 +1,18 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sample.BooksAuthors" table="BooksAuthors" schema="library">
+        <id name="id">
+            <column name="id" sql-type="int(11)"/>
+        </id>
+        <many-to-one name="authorByAuthorIdAuthor" class="sample.Author">
+            <column name="author_id_author"/>
+        </many-to-one>
+        <many-to-one name="bookByBookIdBook" class="sample.Book">
+            <column name="book_id_book"/>
+        </many-to-one>
+    </class>
+</hibernate-mapping>

@@ -1,0 +1,34 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+    "-//Hibernate/Hibernate Configuration DTD//EN"
+    "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+  <session-factory>
+    <property name="connection.url">jdbc:mariadb://wawrzynczak.ddns.net:3306/library</property>
+    <property name="connection.driver_class">org.mariadb.jdbc.Driver</property>
+    <property name="dialect">org.hibernate.dialect.MariaDB10Dialect</property>
+    <property name="connection.username">betty</property>
+    <property name="connection.password">TataKazika97@</property>
+      <mapping class="sample.BooksAuthors"/>
+    <mapping class="sample.BooksAuthors"/>
+    <mapping resource="sample/BooksAuthors.hbm.xml"/>
+    <mapping class="sample.Author"/>
+    <mapping resource="sample/Author.hbm.xml"/>
+    <mapping resource="sample/Book.hbm.xml"/>
+    <mapping class="sample.Book"/>
+    <mapping class="sample.Publishing"/>
+    <mapping resource="sample/Publishing.hbm.xml"/>
+      <mapping resource="sample/Reader.hbm.xml"/>
+      <mapping class="sample.Reader"/>
+      <mapping resource="sample/Role.hbm.xml"/>
+      <mapping class="sample.Role"/>
+      <mapping class="sample.Users"/>
+      <mapping resource="sample/Users.hbm.xml"/>
+      <mapping resource="sample/Worker.hbm.xml"/>
+      <mapping class="sample.Worker"/>
+
+
+      <!-- DB schema will be updated if needed -->
+    <!-- <property name="hibernate.hbm2ddl.auto">update</property> -->
+  </session-factory>
+</hibernate-configuration>

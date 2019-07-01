@@ -1,0 +1,24 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-mapping PUBLIC
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+
+    <class name="sample.Author" table="author" schema="library">
+        <id name="idAuthor">
+            <column name="id_author" sql-type="int(11)"/>
+        </id>
+        <property name="firstName">
+            <column name="first_name" sql-type="varchar(50)" length="50" not-null="true"/>
+        </property>
+        <property name="lastName">
+            <column name="last_name" sql-type="varchar(100)" length="100" not-null="true"/>
+        </property>
+        <property name="biography">
+            <column name="biography" sql-type="text" not-null="true"/>
+        </property>
+        <property name="birthDate">
+            <column name="birth_date" sql-type="date" not-null="true"/>
+        </property>
+    </class>
+</hibernate-mapping>

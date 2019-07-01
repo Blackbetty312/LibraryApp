@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.ContextMenu?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="readerViewScene" prefHeight="600.0" prefWidth="800.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.ReaderView">
+   <center>
+      <TabPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Autorzy">
+               <content>
+                  <TableView fx:id="authorsTable" prefHeight="200.0" prefWidth="200.0">
+                    <columns>
+                      <TableColumn fx:id="nameColumn" prefWidth="75.0" text="Imię" />
+                      <TableColumn fx:id="lastNameColumn" prefWidth="75.0" text="Nazwisko" />
+                        <TableColumn fx:id="birthdayColumn" prefWidth="111.0" text="Data urodzenia" />
+                    </columns>
+                     <contextMenu>
+                        <ContextMenu fx:id="contextMenuAuthor">
+                          <items>
+                            <MenuItem mnemonicParsing="false" onAction="#deleteAuthor" text="Usuń" />
+                              <MenuItem fx:id="d" mnemonicParsing="false" onAction="#addAuthor" text="Dodaj" />
+                              <MenuItem mnemonicParsing="false" onAction="#showDescAuthor" text="Opis" />
+                          </items>
+                        </ContextMenu>
+                     </contextMenu>
+                     <padding>
+                        <Insets bottom="50.0" />
+                     </padding>
+                  </TableView>
+               </content>
+            </Tab>
+          <Tab text="Książki">
+               <content>
+                  <VBox>
+                     <children>
+                        <HBox>
+                           <children>
+                              <Label prefHeight="7.0" prefWidth="50.0" text="Wyszukaj">
+                                 <HBox.margin>
+                                    <Insets left="30.0" top="25.0" />
+                                 </HBox.margin>
+                              </Label>
+                              <TextField fx:id="filterField" prefHeight="25.0" prefWidth="490.0">
+                                 <HBox.margin>
+                                    <Insets left="15.0" top="25.0" />
+                                 </HBox.margin>
+                              </TextField>
+                           </children>
+                        </HBox>
+                        <TableView fx:id="bookTable" prefHeight="391.0" prefWidth="800.0">
+                          <columns>
+                            <TableColumn fx:id="isbnCol" prefWidth="144.0" text="ISBN" />
+                            <TableColumn fx:id="titleCol" minWidth="6.0" prefWidth="242.0" text="Tytuł" />
+                              <TableColumn fx:id="releaseCol" minWidth="0.0" prefWidth="92.0" text="Rok wydania" />
+                              <TableColumn fx:id="publisherCol" prefWidth="322.0" text="Wydawnictwo" />
+                          </columns>
+                           <VBox.margin>
+                              <Insets top="25.0" />
+                           </VBox.margin>
+                           <contextMenu>
+                              <ContextMenu fx:id="contextMenuBook">
+                                <items>
+                                    <MenuItem mnemonicParsing="false" onAction="#addBook" text="Dodaj" />
+                                  <MenuItem mnemonicParsing="false" onAction="#deleteBook" text="Usuń" />
+                                </items>
+                              </ContextMenu>
+                           </contextMenu>
+                        </TableView>
+                     </children>
+                  </VBox>
+               </content></Tab>
+        </tabs>
+         <BorderPane.margin>
+            <Insets />
+         </BorderPane.margin>
+      </TabPane>
+   </center>
+</BorderPane>

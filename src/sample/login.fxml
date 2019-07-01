@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane fx:id="loginScene" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Login">
+   <center>
+      <VBox alignment="TOP_CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="800.0">
+         <children>
+            <Label alignment="CENTER" text="Zaloguj się do apliakcji.">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </Label>
+            <TextField fx:id="emailBtn" alignment="CENTER" promptText="E-mail">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" top="50.0" />
+               </VBox.margin>
+            </TextField>
+            <PasswordField fx:id="passBtn" alignment="CENTER" promptText="Hasło">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <VBox.margin>
+                  <Insets left="200.0" right="200.0" top="15.0" />
+               </VBox.margin>
+            </PasswordField>
+            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+               <children>
+                  <Button fx:id="openRegisterBtn" mnemonicParsing="false" onAction="#openRegister" prefHeight="35.0" prefWidth="100.0" text="Zarejestruj się">
+                     <HBox.margin>
+                        <Insets right="50.0" />
+                     </HBox.margin>
+                  </Button>
+                  <Button fx:id="loginBtn" mnemonicParsing="false" onAction="#login" prefHeight="35.0" prefWidth="100.0" text="Zaloguj" />
+               </children>
+            </HBox>
+            <Label fx:id="warning" />
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+         <padding>
+            <Insets top="50.0" />
+         </padding>
+      </VBox>
+   </center>
+</BorderPane>
